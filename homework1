@@ -2,14 +2,48 @@
 <html>
     <head>
         <meta charset="UTF=8">
-        <title>Homework1</title>
+        <title>FirstHomework</title>
     </head>
     <body>
-        <h2>Test</h2>
+        <h1>HTML First Homework</h1>
+        <hr>
+        <h2>Shopping list</h2>
+        
+        <br>
+
         <ol type="I">
-            <li>1</li>
+            <li>
+                <ol><b>Groceries</b>
+                    <ol><u><i>Vegetables</i></u>
+                        <ul>
+                            <li>Green</li>
+                            <ol><p><abbr title="Agricultural products that were grown without the employment of conventional pesticides or artificial fertilizers."> ORGANIC</abbr></p>
+                                <ol><li>Cucumber</li>
+                                <li>Paprika</li>
+                                </ol>      
+                            </ol>
+                        
+                        </ul>
+                        <ul>
+                            <li>Red</li>
+                            <ul><dt>GMO
+                                <dd><i>Genetically Modified Organism</i></dd>
+                                    <ol>
+                                        <li>beetroot</li>
+                                        <li>cabbage</li>
+                                    </ol>
+                            </dt></ul>
+                        </ul>
+                    </ol>
+                    <ul><u><i>Fruits</i></u>
+
+                    </ul>
+                </ol>
+            </li>
             <li>2</li>
             <li>3</li>
+            <li>4</li>
+            <li>5</li>
         </ol>
     </body>
 
