@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
     <head>
         <meta charset="UTF=8">
         <title>ShoppingList</title>
@@ -18,8 +18,9 @@
                         <ul>
                             <li>Green</li>
                             <ol><p><abbr title="Agricultural products that were grown without the employment of conventional pesticides or artificial fertilizers."> ORGANIC</abbr></p>
-                                <ol><li>Cucumber</li>
-                                <li>Paprika</li>
+                                <ol>
+                                    <li>Cucumber</li>
+                                    <li>Paprika</li>
                                 </ol>      
                             </ol>
                         
