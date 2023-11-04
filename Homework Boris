@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF=8">
+        <title>ShoppingList</title>
+    </head>
+    <body>
+        <h1>HTML First Homework</h1>
+        <hr>
+        <h2>Shopping list</h2>
+        
+        <br>
+                    <!-- First topic -->
+        <ol type="I">
+            <li>
+                <ol><b>Groceries</b>
+                    <ol><u><i>Vegetables</i></u>
+                        <ul>
+                            <li>Green</li>
+                            <ol><p><abbr title="Agricultural products that were grown without the employment of conventional pesticides or artificial fertilizers."> ORGANIC</abbr></p>
+                                <ol>
+                                    <li>Cucumber</li>
+                                    <li>Paprika</li>
+                                </ol>      
+                            </ol>
+                        
+                        </ul>
+                        <ul>
+                            <li>Red</li>
+                            <ul><p><abbr title="Genetically Modified Organism">GMO</abbr>
+                                    <ol>
+                                        <li>beetroot</li>
+                                        <li>red cabbage</li>
+                                    </ol>
+                                </ul>
+                        </ul>
+                    </ol>
+                    <ul><u><i>Fruits</i></u>
+                        <ul>
+                            <li>Sweet</li>
+                            <ol>
+                                <li>Grape</li>
+                                <li>Pear</li>
+                                <li>Watermelon</li>
+                            </ol>
+
+                            <li>Sour</li>
+                            <ol>
+                                <li>Cranberry</li>
+                                <li>Lemon</li>
+                                <li><dt>Orange</dt></li>
+                                <dd>Navel orange and Blood orange</dd>
+                            </ol>
+                        </ul>
+
+                    </ul>
+                </ol>
+            </li>
+
+<br>            
+                    <!-- Second topic -->
+
+            <li>
+                <ul>
+                    <b>Hygiene</b>
+                    <ul>
+                        <li><i><u>Personal hygiene</u></i></li>
+                            <ol>
+                            <li><dt>Razor</dt></li>
+                            <dd>Gillete</dd>
+                            <li><dt>Liquid soap</dt></li>
+                            <dd>Dove</dd>
+                            </ol>
+
+<br>                            
+                        <li><i><u>Bathroom hygiene</u></i></li>
+                            <ol>
+                                <li>Gloves</li>
+                                <li>Mop</li>
+                                <li>Sanitizer</li>
+                            </ol>
+
+                    </ul>
+                </ul>
+            </li>
+
+<br>
+                    <!-- Third topic -->
+            <li>
+                <ul>
+                    <b>Utilites</b>
+                        <ul>
+                            <li><u><i>Batteries</i></u></li>
+                                <ol>
+                                    <li>AA</li>
+                                    <li>AAA</li>
+                                </ol>
+                        
+<br>                                
+                            <li><u><i>Toys</i></u></li>
+                                <ol>
+                                    <li>Glue</li>
+                                    <li>PH1 screws</li>
+                                </ol>
+                        </ul>
+                </ul>    
+            </li>
+
+<br>
+                    <!-- Fourth topic -->
+            <li>
+                <ul>
+                    <b>Baby care</b>
+                        <ul>
+                            <li><i><u>Hygiene</u></i></li>
+                                <ol>
+                                    <li>Cream</li>
+                                    <li>Wet wipes</li>
+                                    <li>Nappies</li>
+                                </ol>
+
+<br>                                
+                            <li><i><u>Everyday items</u></i></li>
+                                <ol>
+                                    <li>Milk powder</li>
+                                    <li>Soother</li>
+                                    <li><dt>Bottled water</dt></li>
+                                    <dd>Izvorska</dd>
+                                </ol>
+                        </ul>
+                </ul>
+            </li>
+
+<br>
+                    <!--  Fifth topic  -->
+            <li>
+                <ul>
+                    <h3><b><u>BUY ALL THE CHOCOLATE</u></b></h3>
+                </ul>    
+            </li>
+        </ol>
+
+<br>
+
+    <p><small>All rights reserved.&reg; Boris 2023</small></p>    
+
+    </body>
+
+
+</html>
