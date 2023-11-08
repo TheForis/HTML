@@ -5,6 +5,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Table exercise</title>
 </head>
+<header>
+    <h1>On site coding</h1>
+</header>
 <body>
     <!--table example basic structure -->
     <table border="1">
@@ -26,7 +29,7 @@
     </table>
     <br><br>
 <!-- table example with footer -->
-    <table border="1">
+    <table style="background-color: rgb(185, 202, 122);" border="1">
         <caption><strong>Employee vacation days</strong></caption>
         <thead>
             <th>First and Last Name</th>
@@ -57,5 +60,130 @@
             </tr>
         </tfoot>
     </table>
+<!-- Column span -->
+    <table border="2" style="background-color: rgb(221, 228, 126);">
+        <caption>School schedule</caption>
+        <thead>'
+            <th>Weekday/Class</th>
+            <th>8AM</th>
+            <th>9AM</th>
+            <th>10AM</th>
+            <th>11AM</th>
+            <th>12AM</th>
+        
+        </thead>
+
+        <tbody style="border: `px solid green"; >
+            <tr>
+                <td style="background-color: blueviolet;"><b>Monday</b></td>
+                <td colspan="2">Math</td>
+                <td>Biology</td>
+                <td colspan="2">Chemistry</td>
+              
+            </tr>
+            <tr>
+                <td><b>Monday</b></td>
+                <td>English</td>
+                <td>Physics</td>
+                <td colspan="3">Gym</td>
+            </tr>
+        </tbody>
+    </table>
+    <br><br>
+
+    <!-- Row Span   -->
+    <table border="2">
+        <caption>Daily Program</caption>
+        <thead>
+            <th>Hour/Program</th>
+            <th>HBO</th>
+            <th>BBC</th>
+            <th>CNN</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td><b>6pm - 7pm</b></td>
+                <td rowspan="2" style="color: blue;">The Lord of the Rings</td>
+                <td style="color: orange;">Comedy Central</td>
+                <td style="color: red;">NBA</td>
+            </tr>
+            <tr>
+                <td><b>7pm - 8pm</b></td>
+                <td>News</td>
+                <td>Weather</td>
+            </tr>
+            </tbody>
+        </table>
+
+            <br><br>
+
+    <!-- Rowspan and Colspan together -->
+
+    <table border="2">
+        <caption>Colspan and rowspan</caption>
+        <thead>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8am - 9am</td>
+                <td rowspan="2">Math</td>
+                <td rowspan="2" colspan="2">Science</td>
+            </tr>
+            <tr>
+                <td>9am - 10am</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <br><br>
+
+    <!-- Rowspan and Colspan together with images -->
+
+    <table border="2">
+        <caption>Colspan and rowspan</caption>
+        <thead>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8am - 9am</td>
+                <td rowspan="2"><img src="../img/hand-making-small-heart-sign-vector-28932038.jpg" alt="Math" style="height: 60px; > </td>
+                
+                <td  rowspan="1" colspan="2"><img src="../img/Science.jpeg" alt="Science" style="height: 60px;">  </td>
+            </tr>
+            <tr>
+                <td>9am - 10am</td>
+            </tr>
+        </tbody>
+    </table> 
+<br>
+<br>
+    <table border="2">
+        <caption>Colspan and rowspan</caption>
+        <thead>
+            <th>Time</th>
+            <th>Monday</th>
+            <th>Tuesday</th>
+            <th>Wednesday</th>
+        </thead>
+        <tbody>
+            <tr>
+                <td>8am - 9am</td>
+                <td rowspan="2"><img style="width: 60px;" src="../img/hand-making-small-heart-sign-vector-28932038.jpg" alt="Math"></td>
+                <td rowspan="2" colspan="2"><img style="width: 60px;" src="../img/Science.jpeg" alt="Science"></td>
+    </table>
+
 </body>
+
+    <footer>
+        <h6>All rights reserved.&reg; Boris 2023</h6>
+    </footer>
+
 </html>
