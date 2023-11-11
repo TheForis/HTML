@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>HTML FORMS</title>
+    </head>
+    <body>
+
+        <form action="" method="post">
+            <label for="username">Username:</label>
+            <input type="text" name="Username" id="username" required placeholder="Enter Username here">
+
+            <label for="password">Password:</label>
+            <input type="password" name="password" id="password" required placeholder="Passasword here"></input>
+
+            <input type="submit" value="Log in" />
+
+            
+            
+        </form>
+
+        <br/>
+        <br/>
+
+        <form action="" method="post">
+            <label for="story">Tell us your story:</label>
+            <br/>
+            <textarea name="Story" id="Story" cols="45" rows="10"></textarea>
+            <br>
+            
+            <button type="submit">Send Message</button>
+        </form>
+        
+        <br>
+        <br>
+
+        <form action="" method="post">
+
+            <fieldset>
+                <legend>Radio inputs</legend>
+                <p>Please select your favourite music genre:</p>
+
+                <input type="radio" name="music-genre" id="rock" value="rock"/>
+                <label for="rock">Rock</label>
+
+                <input type="radio" name="music-genre" id="pop" value="pop"/>
+                <label for="pop">Pop</label>
+
+                <input type="radio" name="music-genre" id="jazz" value="jazz"/>
+                <label for="jazz">Jazz</label>
+
+                
+            </fieldset>
+            
+            <fieldset>
+                <legend>Checkbox input</legend>
+                <p>Please select your favourite music streaming service(s):</p>
+
+                <input type="checkbox" name="service" id="apple" value="AppleMusic"/>
+                <label for="apple">AppleMusic</label>
+
+                <input type="checkbox" name="service" id="google" value="GoogleMusic"/>
+                <label for="google">GoogleMusic</label>
+
+            </fieldset>
+
+        </form>
+
+    </body>
+
+</html>
