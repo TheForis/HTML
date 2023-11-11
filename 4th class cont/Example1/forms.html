@@ -62,6 +62,101 @@
                 <label for="google">GoogleMusic</label>
 
             </fieldset>
+            <br>
+            <br>
+
+            <fieldset>
+                <legend>Select input</legend>
+                <label for="device">What device do you listen to music on-></label>
+                <select name="device" id="devices">
+                    <option value="" selected disabled>Please select</option>
+                    <option value="Phone">Phone</option>
+                    <option value="Desktop">Desktop</option>
+                    <option value="RecordPlayer">Record Player</option>
+                </select>
+
+                <br>
+                <br>
+
+                <label for="instruments">Do you play any of these instruments?</label>
+                <select name="instruments" id="instruments" multiple>
+                    <option value="Guitar">Guitar</option>
+                    <option value="Drums">Drums</option>
+                    <option value="Keyboard">Keyboard</option>
+                    <option value="Bass">Bass</option>
+                </select>
+            </fieldset>
+
+            <br/>
+            <br/>
+
+            <label for="song">Upload your song in .mp3 format:</label>
+            <input type="file" name="user-song" id="user-song"/>
+
+            <input type="hidden" name="form" value="music-form"/>
+
+
+        </form>
+
+        <form action="" method="post">
+            <label for="email">Email:</label>
+            <input type="email" name="personal-email" id="email"/>
+            
+            <br/>
+            <br/>
+
+            <label for="website">Your Website:</label>
+            <input type="url" name="user-website" id="website"/>
+
+            <br>
+            <br>
+            
+            <label for="phone">Phone Number:</label>
+            <input type="tel" name="telephone-number" id="phone">
+
+            <br>
+            <br>
+            
+            <label for="classes">Number of classes (5-10)</label>
+            <input type="number" name="no-classes" id="classes" min="5" max="10">
+
+            <br>
+            <br>
+
+            <label for="birthday">Birthday</label>
+            <input type="date" name="user-birthday" id="birthday">
+
+            <br>
+            <br>
+
+            <label for="timeframe">Book a timeframe</label>
+            <input type="time" name="class-time" id="timeframe">
+
+            <br>
+            <br>
+
+            <label for="search">Search for anything:</label>
+            <input type="search" name="search-query" id="search">
+
+            <br>
+            <br>
+
+            <label for="color">Choose your favourite color:</label>
+            <input type="color" name="favourite-color" id="color">
+
+            <br>
+            <br>
+
+            <label for="volume">Volume:</label>
+            <input type="range" name="volume-control" id="volume" min="0" max="10">
+
+            <br>
+            <br>
+
+            <button type="submit">Send</button>
+
+
+        
 
         </form>
 
