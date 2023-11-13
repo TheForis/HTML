@@ -1,0 +1,44 @@
+*{
+    background-color: antiquewhite;
+}
+/* *:hover{
+    background-color: rgb(253, 3, 3);
+} */
+
+h1{
+    background-color: aquamarine;
+}
+
+article{
+    /* color: brown !important; */
+    color: brown;
+}
+
+#article-h5{
+    color: chocolate;
+    font-size: larger;
+}
+
+/* ide samo na dete, odnosno prv nasleduvach */
+li> a {
+    background-color: burlywood;
+}
+
+/* site "a" tagovi vo listata */
+li a {
+    background-color: burlywood;
+}
+
+#article-h5+p{
+    background-color: goldenrod;
+}
+
+h1~p{
+    background-color: blueviolet;
+}
+
+p:hover {
+
+    background-color: rgba(165, 6, 157, 0.3)
+    
+}
