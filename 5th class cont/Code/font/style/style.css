@@ -1,8 +1,46 @@
-.font {
+.font: {
     background-color: rgba(137, 43, 226, 0.192);
-    font-family: Arial, Helvetica, sans-serif;
+    font-family: "Sofia", Helvetica, sans-serif;
+    font-weight: 400;
+    font-style: oblique 89deg;
+    text-transform: none;
+    text-decoration-line: blink;
+    line-height: 2em;
+    text-align: center;
+
 }
 
 h1{
     font-size: 300%;
+}
+
+h3{
+
+    font-family: "Sofia", serif;
+    font-size: 50px;
+}
+
+label{
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    font-size: 60px;
+}
+
+#ne:hover {
+
+    background-color: red;
+    text-decoration: line-through;
+    text-shadow: 10px 10px 10px;
+
+}
+
+fieldset{
+    border-radius: 30;
+    border-style: dotted;
+}
+
+#da:hover{
+    background-color: green;
+    text-shadow: 5px 5px 5px;
+    
+
 }
