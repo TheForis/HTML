@@ -1,0 +1,18 @@
+a {
+    text-decoration: none;
+}
+a:link{
+    color: green;
+}
+
+a:hover{
+    cursor: pointer;
+}
+
+a:focus{
+    background-color: black;
+}
+
+a:visited{
+    color: blueviolet;
+}
