@@ -29,3 +29,7 @@ FONT SIZE
 float, sticky - za domashno
 so div i html tagovi
 bez tabeli
+
+
+box-sizing: border-box;   - dosta mnogu se koristi 
+end
