@@ -1,0 +1,91 @@
+#first-box {
+    display: inline-block;
+    border: 4px solid black;
+    border-right: 4px solid black;
+    border-bottom: 15px solid black;
+    padding: 35px 31px;
+    margin: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+#second-box{
+    display: inline;
+    border: 4px solid black;
+    border-right: 4px solid black;
+    border-top: 10px solid black;
+    border-bottom: 7px solid black;
+    position: fixed;
+    top: 84px;
+    left: 0px;
+    margin: 80px;
+    padding: 54px 31px;
+
+
+}
+
+#red {
+    display: inline;
+    background-color: red;
+    border: 4px solid black;
+    border-bottom: 7px solid black;
+    margin: 80px;
+    padding: 99px 90px;
+    position: fixed;
+    top: 0;
+    left: 70px;
+}
+
+#blue {
+    display: inline;
+    background-color: #5999c2;
+    border: 4px solid black;
+    border-top: 0;
+    margin: 80px;
+    padding: 31px 31px;
+    position: fixed;
+    top: 208px;
+    left: 0;
+}
+
+#rectangle {
+    display: inline;
+    border: 4px solid black;
+    border-top: 0;
+    border-right: 3px solid black;
+    margin: 80px;
+    padding: 31px 82px;
+    position: fixed;
+    top: 208px;
+    left: 70px;
+    
+}
+
+#white-cube {
+    display: inline;
+    border: 4px solid black;
+    border-top: 0;
+    border-bottom: 7px solid black;
+    margin: 80px;
+    padding: 13px 5px;
+    position: fixed;
+    top: 208px;
+    left: 240px;
+
+}
+
+#yellow-cube {
+    display: inline;
+    background-color: yellow;
+    border: 4px solid black;
+    border-top: 6px solid black;
+    border-bottom: 2px solid black;
+    margin: 80px;
+    padding: 13px 5px;
+    position: fixed;
+    top: 240px;
+    left: 240px;
+
+
+}
