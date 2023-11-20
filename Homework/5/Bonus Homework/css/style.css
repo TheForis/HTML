@@ -2,3 +2,226 @@ h1 {
     font-family: "Sofia", Arial, Helvetica, sans-serif;
     text-align: center;
 }
+
+#one {
+    background-color: #e7eeeb;
+    border: 6px solid black;
+    border-top: 0;
+    border-left: 0;
+    padding: 20px 60px;
+    margin: 80px;
+    position: fixed;
+    left: 0;
+    top: 0;
+}
+
+
+#two {
+    background-color: #f0e8d6;
+    border: 6px solid black;
+    border-top: 0;
+    padding: 20px 80px;
+    margin: 80px;
+    position: fixed;
+    left: 120px;
+    top: 0;
+}
+
+#three {
+    background-color: #eccc73;
+    border: 6px solid black;
+    border-top: 0;
+    padding: 20px 60px;
+    margin: 80px;
+    position: fixed;
+    left: 285px;
+    top: 0;
+}
+
+
+#one-l {
+    background-color: #fbfde9;
+    border: 6px solid black;
+    border-left: 0;
+    padding: 50px 25px;
+    margin: 80px;
+    position: fixed;
+    left: 0;
+    top: 40px;
+
+}
+
+#two-l {
+    background-color: #e3eae5;
+    border: 6px solid black;
+    border-left: 0;
+    padding: 90px 25px;
+    margin: 80px;
+    position: fixed;
+    left: 0;
+    top: 145px;
+
+}
+
+#three-l {
+    background-color: #edc968;
+    border: 6px solid black;
+    border-left: 0;
+    border-bottom: 0;
+    padding: 50px 25px;
+    margin: 80px;
+    position: fixed;
+    left: 0;
+    top: 329px;
+
+}
+
+#one-c {
+    background-color: #c6432c;
+    border: 6px solid black;
+    padding: 115px 115px;
+    margin: 80px;
+    position: fixed;
+    left: 50px;
+    top: 40px;
+}
+
+#two-c {
+    background-color: #eccc73;
+    border: 6px solid black;
+    padding: 56px 60px;
+    margin: 80px;
+    position: fixed;
+    left: 285px;
+    top: 40px;
+}
+
+#three-c {
+    background-color: #e7eeeb;
+    border: 6px solid black;
+    padding: 56px 30px;
+    margin: 80px;
+    position: fixed;
+    left: 285px;
+    top: 158px;
+}
+
+#four-c {
+    background-color: white;
+    border: 6px solid black;
+    padding: 56px 27px;
+    margin: 80px;
+    position: fixed;
+    left: 351px;
+    top: 158px;
+}
+
+
+#one-b {
+    background-color: black;
+    border: 6px solid black;
+    padding: 50px 56px;
+    margin: 80px;
+    position: fixed;
+    left: 50px;
+    top: 275px;
+
+}
+
+#two-b {
+    background-color: #c0bfba;
+    border: 6px solid black;
+    padding: 23.5px 56px;
+    margin: 80px;
+    position: fixed;
+    left: 168px;
+    top: 275px;
+
+}
+
+#three-b {
+    background-color: #dfe2d5;
+    border: 6px solid black;
+    padding: 23.5px 56px;
+    margin: 80px;
+    position: fixed;
+    left: 168px;
+    top: 327px;
+
+}
+
+#four-b {
+    background-color: #e2ded9;
+    border: 6px solid black;
+    border-bottom: 0;
+    padding: 24px 56px;
+    margin: 80px;
+    position: fixed;
+    left: 50px;
+    top: 380px;
+}
+
+#five-b {
+    background-color: black;
+    border: 6px solid black;
+    padding: 15px 56px;
+    margin: 80px;
+    position: fixed;
+    left: 168px;
+    top: 380px;
+}
+
+#six-b {
+    background-color: #d7dee0;
+    border: 6px solid black;
+    padding: 23.5px 60px;
+    margin: 80px;
+    position: fixed;
+    left: 285px;
+    top: 275px;
+}
+
+#seven-b {
+    background-color: #231481;
+    border: 6px solid black;
+    padding: 41.5px 60px;
+    margin: 80px;
+    position: fixed;
+    left: 285px;
+    top: 327px;
+}
+
+#eight-b {
+    background-color: #e0e0df;
+    border: 6px solid black;
+    border-bottom: 0;
+    padding: 6.5px 118.5px;
+    margin: 80px;
+    position: fixed;
+    left: 168px;
+    top: 415px;
+}
+
+#one-r {
+    background-color: #fcfde9;
+    border: 6px solid black;
+    border-top: 0;
+    border-right: 0;
+    padding: 163.5px 10px;
+    margin: 80px;
+    position: fixed;
+    left: 410px;
+    top: 0;
+}
+
+#two-r {
+    background-color: #c74936;
+    border: 6px solid black;
+    border-right: 0;
+    border-bottom: 0;
+    padding: 50.5px 10px;
+    margin: 80px;
+    position: fixed;
+    left: 410px;
+    top: 327px;
+}
