@@ -1,0 +1,66 @@
+h1 {
+    font-family: "Sofia", arial;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    width: 600px;
+    height: 600px;
+    grid-template-rows: 1fr 2fr 0.5fr 0.5fr;
+    grid-template-columns: 1fr 3fr 0.2fr;
+    gap: 0;
+    border: 5px solid black;
+    border-bottom: 0px;
+    margin: auto;
+}
+
+.first-box {
+    grid-column: 1;
+    grid-row: 1;
+}
+
+.second-box {
+    grid-column: 1;
+    grid-row: 2;
+    border-top: 35px solid black;
+    border-bottom: 10px solid black;
+}
+
+.red-box {
+    grid-column: 2/span 2;
+    grid-row: 1/span 2;
+    border-left: 10px solid black;
+    border-bottom: 10px solid black;
+    background-color: red;
+}
+
+.blue-box {
+    grid-column: 1;
+    grid-row: 3/span 2;
+    background-color: #6896bf;
+    border-bottom: 5px solid black;
+}
+
+.third-box {
+    grid-column: 2;
+    grid-row: 3/span2;
+    border-left: 10px solid black;
+    border-right: 10px solid black;
+    border-bottom: 5px solid black;
+
+}
+
+.small-box {
+    grid-column: 3;
+    grid-row: 3;
+    border-bottom: 10px solid black;
+}
+
+.small-yellow-box {
+    grid-column: 3;
+    grid-row: 4;
+    border-top: 10px solid black;
+    border-bottom: 2px solid black;
+    background-color: yellow;
+}

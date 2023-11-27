@@ -1,0 +1,144 @@
+h1 {
+    font-family: "Sofia", Arial, Helvetica, sans-serif;
+    text-align: center;
+}
+
+.container {
+    display: grid;
+    width: 650px;
+    height: 700px;
+    grid-template-columns: 1fr 1fr 1fr 2fr 1fr 1fr 0.4fr;
+    grid-template-rows: 0.8fr 2fr 2fr 1fr 1fr 0.7fr 0.3fr;
+    gap: 0;
+    margin:  auto;
+}
+
+.one {
+    grid-column: 1/span 2;
+    background-color: #e8eeeb;
+    border-bottom: 7px solid black;
+    border-right: 7px solid black;
+    
+}
+
+.two {
+    grid-column: 3/span 2;
+    background-color: #efe8d7;
+    border-bottom: 7px solid black;
+    border-right: 7px solid black;
+}
+
+.three {
+    grid-column: 5/span 2;
+    background-color: #e7ce7c;
+    border-bottom: 7px solid black;
+
+}
+
+.four {
+    grid-column: 7;
+    grid-row: 1/span 4;
+    border-bottom: 7px solid black;
+    border-left: 7px solid black;
+    
+}
+
+.five {
+    grid-column: 1;
+    grid-row: 2;
+    border-bottom: 7px solid black;
+}
+
+.six {
+    grid-column: 2/span 3;
+    grid-row: 2/span 2;
+    background-color: #b85033;
+    border: 7px solid black; 
+    border-top: 0;
+}
+
+.seven {
+    grid-column: 5/span 2;
+    grid-row: 2;
+    background-color: #e7ce7c;
+    border-bottom: 7px solid black
+}
+
+.eight {
+    grid-column: 1;
+    grid-row: 3/span 2;
+    background-color: #e8eeeb;
+    border-bottom: 7px solid black;
+
+}
+
+.nine {
+    grid-column: 5;
+    background-color: #e8eeeb;
+    border-bottom: 7px solid black;
+    border-right: 3.5px solid black;
+}
+
+.ten {
+    border-bottom: 7px solid black;
+    border-left: 3.5px solid black
+}
+
+.eleven {
+    grid-column: 2/span 2;
+    grid-row: span 2;
+    background-color: black;
+}
+
+.twelve {
+    background-color: #e8eeeb;
+    border-right: 7px solid black;
+    border-bottom: 7px solid black;
+}
+
+.thirteen {
+    grid-column: span 2;
+    background-color: #d8dee0;
+    border-bottom: 7px solid black;
+}
+
+.fourteen {
+    grid-row: span 3;
+    background-color: #e7ce7c;
+}
+
+.fifteen {
+    background-color: #d1d6ce;
+    border-right: 7px solid black;
+    border-bottom: 7px solid black;
+}
+
+.sixteen {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #21117d;
+    border-bottom: 7px solid black;
+}
+
+.seventeen {
+    grid-row: span 3;
+    background-color: #b85033;
+    border-left: 7px solid black;
+}
+
+.eighteen {
+    grid-column: span 2;
+    grid-row: span 2;
+    background-color: #d8dee0;
+    border-left: 7px solid black;
+    border-right: 7px solid black;
+}
+
+.nineteen {
+    background-color: black;
+}
+
+.twenty {
+    grid-column: span 3;
+    background-color: #d8dee0;
+}
