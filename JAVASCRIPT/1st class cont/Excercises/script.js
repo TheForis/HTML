@@ -12,5 +12,3 @@ let b = prompt("Please enter second value");
 // let b = 5
 let area = a * b;
 console.log('Rectange Area:', area) ;
-
-if area 
