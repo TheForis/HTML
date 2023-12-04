@@ -48,7 +48,7 @@
     transition-timing-function: linear;
 }
 
-.transition-timing:active {
+.transition-timing:hover {
     width: 80%;
     background-color: red;
     transition: 5s, 5s;
