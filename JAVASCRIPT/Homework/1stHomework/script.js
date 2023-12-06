@@ -57,3 +57,13 @@ console.log('The circle area is:', circleArea);
 
 console.log('-----End-------------');
 
+
+function assignLet() {
+    const phonePriceTest = 119.95 ;
+    const taxTest = 0.05 ;
+    const taxPerPhoneTest = phonePriceTest * taxTest
+    let phoneNumber = document.getElementById("siteNumber").value;
+    let totalTest = (phonePriceTest + taxPerPhoneTest ) * phoneNumber;
+    console.log ('Total phone price:$', totalTest);
+    }
+
