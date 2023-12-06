@@ -56,14 +56,14 @@ let circleArea = pi * circleRadius * circleRadius;
 console.log('The circle area is:', circleArea);
 
 console.log('-----End-------------');
-console.log('-----Test HTML input to console result-------------');
+// console.log('-----Test HTML input to console result-------------');
 
-function assignLet() {
-    const phonePriceTest = 119.95 ;
-    const taxTest = 0.05 ;
-    const taxPerPhoneTest = phonePriceTest * taxTest
-    let phoneNumber = document.getElementById("siteNumber").value;
-    let totalTest = (phonePriceTest + taxPerPhoneTest ) * phoneNumber;
-    console.log ('Total phone price:$', totalTest);
-    }
+// function assignLet() {
+//     const phonePriceTest = 119.95 ;
+//     const taxTest = 0.05 ;
+//     const taxPerPhoneTest = phonePriceTest * taxTest
+//     let phoneNumber = document.getElementById("siteNumber").value;
+//     let totalTest = (phonePriceTest + taxPerPhoneTest ) * phoneNumber;
+//     console.log ('Total phone price:$', totalTest);
+//     }
 
