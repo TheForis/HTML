@@ -24,7 +24,7 @@ console.log(`${fahrenheitValue}F equals to ${fahrenheitToCelsiusResult}C`);
 
 console.log('----------THIRD EXERCISE----------')
 
-function calculateAGE(birthYear, currentYear) {
+function calculateAGE(birthYear) {
     const date = new Date();
     let year = date.getFullYear ();
     result = year - birthYear;
