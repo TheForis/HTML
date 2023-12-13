@@ -35,8 +35,10 @@ console.log(`The sum of the array containing the numbers:${arrayNumbers} is ${su
 
 console.log('---------HOMEWORK #3---------');
 
-
-
+let strings = ['Hello', 'to', 'all', 'Quinshift', 'students', '!'];
+for(let text of strings){
+    console.log(text);
+    }
 console.log('---------HOMEWORK #4---------');
 
 
