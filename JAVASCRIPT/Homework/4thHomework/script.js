@@ -45,21 +45,66 @@ function sumStrings(array){
 }
  console.log(sumStrings(strings));
 
+
+ 
 console.log('---------HOMEWORK #4---------');
 
-
-
-
-
-
+for (let i=1; i<=20; i++){
+    if (i % 2 === 0){
+        console.log(i,);
+        console.log('\n');
+        
+        
+    }
+    else{
+        console.log(i , ' ');  
+    } 
+}
 
 
 
 console.log('---------HOMEWORK #5---------');
 
+function minMaxSum(array) {
+    let index=0;
+    let max = -Infinity;
+    let min = Infinity;
+    
+    while (index < array.length){
+        if (array[index] > max){
+            max = array[index];
+        }
+        if (array[index]< min){
+            min = array [index]
+        }
+        index++;
+    }
+    let result = (max + min);
+    console.log(`Output:Max: ${max}, Min: ${min}, Sum:${result}`)
+}
 
+let minMaxArray = [3, 5, 6, 8, 11, 59 , 32 , 2];
+minMaxSum(minMaxArray);
 
 
 
 
 console.log('---------HOMEWORK #6---------');
+
+function sumName(firstName, last) {
+    let nameCounter = 0
+    let result= 0
+    while (nameCounter < firstName.length){
+        result = [(`${nameCounter + 1}. ${firstName[nameCounter]} ${last[nameCounter]}`)];
+        nameCounter++;
+        
+    console.log(result)
+    }
+}
+
+let firstNameArray = ['Bob', 'Jill', 'Ane', 'Tose'];
+let lastNameArray = ['Gregory', 'Wurtz', 'Stankovska', 'Pelivanov'];
+
+sumName(firstNameArray, lastNameArray);
+
+
