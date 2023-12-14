@@ -93,7 +93,7 @@ console.log('---------HOMEWORK #6---------');
 
 function sumName(firstName, last) {
     let nameCounter = 0
-    let result= 0
+    let result= []
     while (nameCounter < firstName.length){
         result = [(`${nameCounter + 1}. ${firstName[nameCounter]} ${last[nameCounter]}`)];
         nameCounter++;
