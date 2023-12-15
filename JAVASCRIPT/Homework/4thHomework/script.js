@@ -1,17 +1,15 @@
 console.log('---------HOMEWORK #1---------');
 
-function tellStory (name, age, mood, activity) {
-   let story = `Meet ${name}. ${name} is ${age} years old. Today ${name} is feeling ${mood}. Tomorrow ${name} will be ${activity} for the whole day! Fin.`;
+function tellStory (array) {
+
+   let story = `Meet ${array[0]}. Today ${array[0]} is feeling ${array[1]}. Tomorrow ${array[0]} will be ${array[2]} for the whole day! Fin.`;
    
    return story;
     
 }
 
-let userName = prompt("Please enter your name:");
-let userAge = prompt("Please enter your age:");
-let userMood = prompt("Please enter your mood:");
-let userActivity = prompt("Please enter what activity you've got tomorrow");
-let storyResult = tellStory(userName, userAge, userMood, userActivity);
+let storyArray = ['Boris', 'confused', 'running'];
+let storyResult = tellStory(storyArray);
 console.log(storyResult)
 
 
@@ -49,16 +47,15 @@ function sumStrings(array){
  
 console.log('---------HOMEWORK #4---------');
 
+
 for (let i=1; i<=20; i++){
     if (i % 2 === 0){
-        console.log(i,);
-        console.log('\n');
-        
-        
+
+        console.log(`${i - 1} ${i}\n`);
+       }
+    else {
+        console.log(' ')
     }
-    else{
-        console.log(i , ' ');  
-    } 
 }
 
 
@@ -95,11 +92,10 @@ function sumName(firstName, last) {
     let nameCounter = 0
     let result= []
     while (nameCounter < firstName.length){
-        result = [(`${nameCounter + 1}. ${firstName[nameCounter]} ${last[nameCounter]}`)];
+        result += [` "${nameCounter + 1}. ${firstName[nameCounter]} ${last[nameCounter]}",`];
         nameCounter++;
         
-    console.log(result)
-    }
+    }return result;
 }
 
 let firstNameArray = ['Bob', 'Jill', 'Ane', 'Tose'];
@@ -107,4 +103,24 @@ let lastNameArray = ['Gregory', 'Wurtz', 'Stankovska', 'Pelivanov'];
 
 sumName(firstNameArray, lastNameArray);
 
+let sumOfNames = [sumName(firstNameArray, lastNameArray)]
+console.log(sumOfNames)
 
+
+// function sumName(firstName, last) {
+//     let nameCounter = 0
+//     let result= []
+//     while (nameCounter < firstName.length){
+//         result += '"' + [nameCounter +1]+'.' + [firstName[nameCounter]] + [last[nameCounter]]+ '"' + ', ';
+//         nameCounter++;
+        
+//     }return result;
+// }
+
+// let firstNameArray = ['Bob', 'Jill', 'Ane', 'Tose'];
+// let lastNameArray = ['Gregory', 'Wurtz', 'Stankovska', 'Pelivanov'];
+
+// sumName(firstNameArray, lastNameArray);
+
+// let sumOfNames = [sumName(firstNameArray, lastNameArray)]
+// console.log(sumOfNames)
