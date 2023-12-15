@@ -47,17 +47,17 @@ function sumStrings(array){
  
 console.log('---------HOMEWORK #4---------');
 
-
+let i = 0
 for (let i=1; i<=20; i++){
     if (i % 2 === 0){
 
         console.log(`${i - 1} ${i}\n`);
        }
     else {
-        console.log(' ')
+        console.log(' ')  // bez ova nema prazen red. Neznam shto saka avtorot da kazhe
     }
 }
-
+console.log
 
 
 console.log('---------HOMEWORK #5---------');
