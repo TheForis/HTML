@@ -11,7 +11,7 @@ function generateTable() {
     for (let i = 0; i < rowNumber.value; i++) {
         let row = document.createElement('tr');
   
-      for (let col = 0; col < columnNumber.value; col++) {
+    for (let col = 0; col < columnNumber.value; col++) {
         let cell = document.createElement('td');
         let cellText = document.createTextNode(`cell in row ${i+1}, column ${col+1}`);
         cell.appendChild(cellText);
@@ -23,7 +23,7 @@ function generateTable() {
     table.appendChild(tableBody);
     document.body.appendChild(table);
     table.setAttribute('border', '2');
-    table.style.backgroundColor = 'antiquewhite'
+    table.style.backgroundColor = 'antiquewhite';
   }
 
 myButton.addEventListener('click', function(){
