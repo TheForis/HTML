@@ -17,8 +17,7 @@ if (userInputRecipeLenght %1 === 0){
         ingredients.push(userInputIngredientName);
         }  
 
-        console.log(ingredients);
-
+        console.log(ingredients);   
         let list = document.getElementById('list');
         for (i = 0; i < ingredients.length; ++i) {
             let li = document.createElement('li');

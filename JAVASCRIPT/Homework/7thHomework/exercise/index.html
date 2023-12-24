@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>In class exercise</title>
+</head>
+<body>
+    <form action="" method="post" style="border: 2px solid black;">
+        <h2 style="text-align: center;">Student registry form</h2>
+        <label for="firstName">First name:</label>
+        <input type="text" name="firstNameInput" id="firstName" value="Enter your name">
+    <br>
+    <br>
+        <label for="lastName">Last name:</label>
+        <input type="text" name="lastNameInput" id="lastName" value="Enter your last name">
+    <br>
+    <br>
+        <label for="studentAge">Your age:</label>
+        <input type="number" name="ageInput" id="studentAge">
+
+    <br>
+    <br>
+        <input type="button" value="Save" id="saveButton" style="width: 20vw; height: 30px;">
+    <br>
+    <br>
+
+
+</form>
+    <h2 style="text-align: center;">Student list</h2>
+        
+    <button type="button" id="showListButton">Show the full student list</button>
+    <button type="button" id="resetButton">Clear the student list</button>
+
+    <ul>
+        <ul id="studentList"></ul>
+    </ul>
+     
+        
+
+
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
