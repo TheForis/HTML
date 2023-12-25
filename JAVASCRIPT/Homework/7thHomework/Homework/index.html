@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registering users</title>
+</head>
+<body>
+    <form action="post" style="border: 2px solid red;">
+        <h2>Register users</h2>
+        <label for="firstName">First Name:</label>
+        <input type="text" name="firstName" id="firstName" class="inputs">
+        <br>
+        <br>
+        <label for="lastName">Last Name:</label>
+        <input type="text" name="lastName" id="lastName" class="inputs">
+        <br>
+        <br>
+        <label for="email">E-mail:</label>
+        <input type="email" name="email" id="email" class="inputs">
+        <br>
+        <br>
+        <label for="password">password:</label>
+        <input type="password" name="password" id="password" class="inputs">
+        <br>
+        <br>
+        <button type="button" id="submitButton">SUBMIT</button>
+        <br>
+        <br>
+    </form>
+<br>
+    <div>
+        <button type="button" id="resultButton">Show All Users</button>
+        <button type="button" id="clearButton">Clear</button>
+        <ol id="list"> Users list:
+
+        </ol>
+    </div>
+    
+
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>
