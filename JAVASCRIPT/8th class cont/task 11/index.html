@@ -9,15 +9,15 @@
     <form action="" method="post" style="border: 2px solid black;">
         <h2 style="text-align: center;">PhoneBook form</h2>
         <label for="firstName">First name:</label>
-        <input type="text" name="firstNameInput" id="firstName" value="Enter your name">
+        <input type="text" name="first" id="firstName" value="Enter your name">
     <br>
     <br>
         <label for="lastName">Last name:</label>
-        <input type="text" name="lastNameInput" id="lastName" value="Enter your last name">
+        <input type="text" name="last" id="lastName" value="Enter your last name">
     <br>
     <br>
-        <label for="numberInput">Your number:</label>
-        <input type="number" name="numberInput" id="phoneNumber">
+        <label for="phoneNumber">Your number:</label>
+        <input type="number" name="number" id="phoneNumber">
 
     <br>
     <br>
@@ -28,9 +28,16 @@
 
     </form>
 
-
-<table>
-
+<br>
+<table border="1" id="table">
+        <th>Name</th>
+        <th>Last Name</th>
+        <th>Phone Number</th>
+        <th>Edit</th>
+        <th>Delete</th>
+    <tbody id="tableBody">
+        
+    </tbody>
 </table>
 
 
