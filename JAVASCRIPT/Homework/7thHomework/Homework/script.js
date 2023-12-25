@@ -5,9 +5,11 @@ let passwordInput = document.getElementById('password').value;
 let button = document.getElementById('submitButton');
 let resultButton = document.getElementById('resultButton');
 let clearButton = document.getElementById('clearButton');
+let list = document.getElementById('list');
 
 const usersList = []
 let usersFullList = []
+
 function userCredentials (name, lastName, email, password){
     this.name = name;
     this.lastName = lastName;
@@ -22,8 +24,20 @@ function userCredentials (name, lastName, email, password){
     }
 }
 
+function createUser(){
+    let userInputs = document.getElementsByClassName('inputs');
+    let users = []
+    for (let i=0; i< userInputs.length; i++){
+        users.push(userInputs[i].value);
+    }
+    let registerUser = new userCredentials(users[0],users[1],users[2],users[3])
+    console.log(registerUser)
+    registerUser.user();
+    registerUser.userInfo();
+
+}
+
 function showUsersInHtml (users){
-    let list = document.getElementById('list');
     for (i = 0; i < users.length; i++) {
         let li = document.createElement('li');
         li.innerText = users[i];
@@ -36,26 +50,12 @@ function clearHtml(inputs) {
     inputs.innerHTML = "";
 }
 
-clearButton.addEventListener("click", function() {
-    ClearHtml(container);
-})
 
 button.addEventListener('click', function(){
-    let userInputs = document.getElementsByClassName('inputs');
-    let users = []
-    for (let i=0; i< userInputs.length; i++){
-        users.push(userInputs[i].value);
-    }
-    let registerUser = new userCredentials(users[0],users[1],users[2],users[3])
-    console.log(registerUser)
-    registerUser.user();
-    registerUser.userInfo();
-
+   createUser();
 })
 
 
-console.log(usersList);
-console.log(usersFullList);
 
 resultButton.addEventListener('click', function(){
     showUsersInHtml(usersList);
@@ -63,4 +63,5 @@ resultButton.addEventListener('click', function(){
 
 clearButton.addEventListener('click', function(){
     clearHtml(list);
+    console.clear();
 })

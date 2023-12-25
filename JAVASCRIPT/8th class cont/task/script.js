@@ -155,12 +155,12 @@
 
 // task 9    
 
-let arrayTaskNine = [null ,undefined , ' ' ,Number('text'), 5 , false, '""', 'test', 10, 'things']
+// let arrayTaskNine = [null ,undefined , ' ' ,Number('text'), 5 , false, '""', 'test', 10, 'things']
 
-console.log(arrayTaskNine);
+// console.log(arrayTaskNine);
 
-let filteredResult = arrayTaskNine.filter(Boolean);
-console.log(filteredResult);
+// let filteredResult = arrayTaskNine.filter(Boolean);
+// console.log(filteredResult);
 
 
 
