@@ -155,12 +155,41 @@
 
 // task 9    
 
-// let arrayTaskNine = [null ,undefined , ' ' ,Number('text'), 5 , false, '""', 'test', 10, 'things']
+let arrayTaskNine = [null ,undefined , ' ' ,Number('text'), 5 , false, '""', 'test', 10, 'things']
 
-// console.log(arrayTaskNine);
+console.log(arrayTaskNine);
 
-// let filteredResult = arrayTaskNine.filter(Boolean);
-// console.log(filteredResult);
+
+function filterArray(array){
+    let filteredArray = []
+    for (let i=0; i < array.length; i++){
+        if (array[i] === undefined){
+            continue;
+        }
+        else if(array[i] === false){
+            continue;
+        }
+        else if(array[i] === null){
+            continue;
+        }
+        else if(array[i] === NaN){
+            continue;
+        }
+        else {
+            filteredArray.push(array[i])
+        }        
+        
+    }console.log(filteredArray)
+
+
+    return filteredArray;
+}
+
+let filteredResult = filterArray(arrayTaskNine)
+console.log(filteredResult);
+
+////// let filteredResult = arrayTaskNine.filter(Boolean);
+////// console.log(filteredResult);
 
 
 
