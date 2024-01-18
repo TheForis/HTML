@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Reminder</title>
+</head>
+<body>
+    <h1>Reminder app</h1>
+    <form action="" method="post">
+    <label for="title">Please enter the title of the Reminder:</label>
+    <input type="text" id="title" value="">
+
+    <br>
+    <br>
+    
+    <label for="priority">Please select the priority-></label>
+                <select name="priority" id="priority">
+                    <option value="" selected disabled>Please select</option>
+                    <option value="low">Low</option>
+                    <option value="normal">Normal</option>
+                    <option value="high">High</option>
+                </select>
+    
+    <br>
+    <br>
+    <label for="color">Please select color</label>
+    <input type="color" id="color">
+    <br>
+    <br>
+    <label for="description">Please enter description for the reminder:</label>
+    <br>
+    <textarea name="description" id="description" value="" rows="3" cols="30"></textarea>
+</form>
+    <br>
+    <br>
+    <hr>
+    <br>
+    <button id="saveButton">Save reminder</button>
+    <button id="showAllButton">Show All reminders</button>
+
+    <br>
+    <br>
+    <br>
+    <br>
+    <table border="2" style="width: 60vh; text-align: center;">
+        <legend>Reminder List</legend>
+        <thead>
+            <th>Title</th>
+            <th>Priority</th>
+            <th>Description</th>
+        </thead>
+        <tbody id="tableBody">
+            <tr>
+                <td>hello</td>
+                <td>hello</td>
+                <td>hello</td>
+            </tr>
+        </tbody>
+    </table>
+
+    
+
+
+
+    <script src="script.js"></script>
+</body>
+</html>

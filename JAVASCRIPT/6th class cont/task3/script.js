@@ -8,7 +8,7 @@ myButton.addEventListener('click',function(){
         valueResult.push(userInputs[i].value);
     }
     console.log(valueResult);
-    paragraph.innerText += valueResult.join('  ');
+    paragraph.innerText += valueResult.join(' \n ');
     console.log(paragraph)
 })
 

@@ -5,7 +5,7 @@ let saveButton = document.getElementById('saveButton');
 let tableBody = document.getElementById('tableBody');
 let table = document.getElementById('table');
 
-function phoneBookConstructor (name, lastName, phoneNumber){
+function PhoneBookConstructor (name, lastName, phoneNumber){
     this.name = name;
     this.lastName = lastName;
     this.number = phoneNumber;
@@ -29,7 +29,7 @@ function tableAdd(array) {
   }
 
 saveButton.addEventListener('click', function(){
-    let newContact = new phoneBookConstructor(firstName.value, lastName.value, phoneNumber.value);
+    let newContact = new PhoneBookConstructor(firstName.value, lastName.value, phoneNumber.value);
     console.log(newContact)
     tableAdd(newContact);
 })
