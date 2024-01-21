@@ -7,6 +7,7 @@ let result = document.getElementById('result');
 
 let reverseSentence = (array) => {
     let result = [];
+    
     for (let i = array.length - 1; i >= 0; i--) {
         result += array[i];
         
