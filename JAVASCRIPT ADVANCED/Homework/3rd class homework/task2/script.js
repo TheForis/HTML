@@ -8,7 +8,7 @@ let saveReminderButton = document.getElementById('saveButton');
 let showRemindersButton = document.getElementById('showAllButton');
 
 
-let reminderContainer = []
+let reminderContainer = [];
 
 
 function Reminder (title, priority, color, description){
@@ -78,6 +78,6 @@ saveReminderButton.addEventListener('click', function(){
 
 
 showRemindersButton.addEventListener('click', function(){
-    tableBody.innerHTML = ''
+    tableBody.innerHTML = '';
     printInfo(reminderContainer);
 })
