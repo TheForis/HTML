@@ -33,7 +33,7 @@ function printInfo(array){
                 let cellText = document.createTextNode(array[i].title);
                 cell.appendChild(cellText);
                 row.appendChild(cell);
-                cell.style.color = array[i].color
+                cell.style.color = array[i].color;
             }
             else if (cells == 1){
                 let cell = document.createElement('td');
