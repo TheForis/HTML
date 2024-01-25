@@ -19,9 +19,10 @@ function Reminder (title, priority, color, description){
 
 }
 
+
 function printInfo(array){
     if (array == 0){
-        alert('There are no reminders')
+        alert('There are no reminders');
     }
     else {
     for(let i=0; i < array.length; i++){

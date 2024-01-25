@@ -1,0 +1,20 @@
+
+
+#divContainer{
+    margin:auto;
+    padding-left: 40vw;
+}
+
+#nextButton{
+    display: inline;
+    width: 100px;
+
+
+}
+#previousButton{
+    display: inline;
+    width: 100px;
+}
+#buttonContainer {
+    margin-left: 43% ;
+}
