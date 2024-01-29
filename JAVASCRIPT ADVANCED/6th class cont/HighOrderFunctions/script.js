@@ -16,7 +16,7 @@ numbers.forEach((num) => num = num * num);
 console.log(numbers);
 
 
-const users = [{id:1, name: 'Alice', age:28, occupation:'Software engineer'},{id:2, name: 'Bob', age:35, occupation:'Data Scientist'},{id:3, name: 'Jane', age:35, occupation:'Q&A specialist'}];
+const users = [{id:1, name: 'Alice', age:28, occupation:'Software engineer'},{id:2, name: 'Bob', age:35, occupation:'Data Scientist'},{id:3, name: 'Jane', age:31, occupation:'Q&A specialist'}];
 
 users.forEach(user => {
     resultP.innerHTML += `<p>${user.name} - ${user.age} years old is ${user.occupation}! <p> `
@@ -81,8 +81,8 @@ students.push('Elena')
 console.log(students);
 
 
-students.sort((a,b) => a.localeCompare(b,'en'));
-console.log(students);
+// students.sort((a,b) => a.localeCompare(b,'en'));
+// console.log(students);
 
 let resultInclude = students.includes('Sasho');
 console.log(resultInclude);
@@ -95,6 +95,32 @@ const findStudent = students.find(student => student === 'Sirma');
 console.log(findStudent);
 
 
+// /Reverse
+
+const array = [1,2,3,4,5];
+console.log(array);
+let newArrayTest = array.toReversed();
+console.log(newArrayTest);
+
+let newArray = array.slice();
+let newTestArray = [...array];
+
+console.log(newArray);
+newArray.reverse();
+console.log(newArray);
+
+
+const originalString = 'Hello, World';
+const reversedString = originalString.split('').reverse().join('');
+console.log(reversedString);
 
 
 
+// index OF dosta se koristi
+
+const indexOfStudent = students.indexOf('Elena');
+console.log(indexOfStudent);
+
+
+const indexOfUser = users.findIndex(user => user.name.toLocaleLowerCase() === 'jane');
+console.log(indexOfUser);
