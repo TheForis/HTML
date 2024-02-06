@@ -6,6 +6,7 @@
     <title>Document</title>
 
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    
     <link rel="stylesheet" href="src/style.css" type="text/css">
 
 </head>
@@ -20,14 +21,27 @@
 
 
       <img id="shipClick" src="src/assets/starWarsShips.png" alt="StarShip Logo" height="150px">
+
+      <img id="planetClick" src="src/assets/planetImage.png" alt="GET PLANET INFO" height="150px">
     </div>
 <br>
 <br>
+<div class="d-flex justify-content-center">
+    <div id="spinLoading" class="spinner-border" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+<br>
 <br>
 
-
+<div id="searchContainer" style="visibility: hidden;">
+  <input type="search" value="Find Person by name" name="searchPeople" id="searchPeople"><button id="searchPeopleButton">Search</button>
+</div>
+<br>
 <div id="resultContainer">
-    <table  class="table table-borderless">
+  
+    <div class="sortable-table">
+    <table  class="table table-borderless" id="resultTable">
         <thead id="headContainer">
 
         </thead>
@@ -36,6 +50,7 @@
             
         </tbody>
     </table>
+
 </div>
 <div id="buttonContainer">
 <div id="previousButton"></div>
@@ -46,8 +61,8 @@
 
 
 
-
-
+  
     <script src="src/app.js"></script>
+    
 </body>
 </html>

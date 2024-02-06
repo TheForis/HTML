@@ -1,30 +1,48 @@
 let peopleClick = document.getElementById('peopleClick');
 let shipClick = document.getElementById('shipClick');
+let planetClick = document.getElementById('planetClick');
 let container = document.getElementById('resultContainer');
 let headContainer = document.getElementById('headContainer');
 let bodyContainer = document.getElementById('bodyContainer');
 let nextButton = document.getElementById('nextButton');
 let previousButton = document.getElementById('previousButton');
+let spinLoader = document.getElementById('spinLoading');
+let firstColumn = document.getElementById('firstCol');
+let searchPeople = document.getElementById('searchPeople')
+let searchButton = document.getElementById('searchPeopleButton');
+let searchContainer = document.getElementById('searchContainer');
+
 
 
 let columnPeopleInfo = ["Name","Height", "Weight","Gender" ,"Birth Year", "Appearances"];
 let columnShipInfo = ["Name","Model", "Manufacturer","Cost" ,"People Capacity", "Class"];
+let columnPlanetInfo = ["Name","Diametar", "Climate","Terrain" ,"Gravity", "Population"]
+let columnNumber = ['firstCol','secondCol','thirdCol','fourthCol','fifthCol','sixthCol','seventhCol']
 let fetchResult = [];
 let clicked = -1;
 
+let dataContainer =[];
+
 let getDataFromApi = (url, renderFunction) => {
+    spinLoader.style.visibility = 'visible';
     fetch(url)
-    .then((response) => {
-        return response.json();
-    })
+    .then(response => response.json())
     .then((result) => {
+        
+        spinLoader.style.visibility = 'hidden';
+
         console.log(result);
         renderFunction(result.results);
         renderButtons(result);
         fetchResult.push(result);
         
+        
+        
     })
+    
     .catch((Error) => {
+        spinLoader.style.visibility = 'hidden';
+        container.innerHTML = 'Sorry, the page cannot be loaded right now. Please try again later!';
         console.log(Error);
     })
 }
@@ -32,6 +50,7 @@ let getDataFromApi = (url, renderFunction) => {
 
 
 let renderPeopleData = (data) => {
+
     for (let i = 0; i < data.length; i++) {
         let row = document.createElement('tr');
 
@@ -49,7 +68,7 @@ let renderPeopleData = (data) => {
         birthYearCell.innerHTML = data[i].birth_year;
         appearancesCell.innerHTML = `${data[i].films.length} movies`;
 
-        
+        // dataContainer.push(data[i])
 
         bodyContainer.appendChild(row);
     }
@@ -82,11 +101,73 @@ let renderShipData = (data) => {
     }
 }
 
-let renderHeader = (array) => {
+let renderPlanetData = (data) => {
+    for (let i = 0; i < data.length; i++) {
+        let row = document.createElement('tr');
+
+        let nameCell = row.insertCell();
+        let diameterCell = row.insertCell();
+        let climateCell = row.insertCell();
+        let terrainCell = row.insertCell();
+        let gravityCell = row.insertCell();
+        let populationCell = row.insertCell();
+
+        nameCell.innerHTML = data[i].name;
+        diameterCell.innerHTML = data[i].diameter;
+        climateCell.innerHTML = data[i].climate;
+        terrainCell.innerHTML = data[i].terrain;
+        gravityCell.innerHTML = data[i].gravity;
+        populationCell.innerHTML = data[i].population;
+
+        bodyContainer.appendChild(row);
+    }
+}
+
+(async function getPersonData (){
+    let result =[];
+    
+    
+    for (let i = 0; i < 9; i++) {
+        let data = await fetch(`https://swapi.dev/api/people/?page=${i+1}`);
+        let response = await data.json();
+        result.push(response.results);
+    }
+    let parsedResult =[].concat.apply([], result);
+    dataContainer = parsedResult;
+    
+})()
+
+
+
+let renderPersonData = (data) => {
+
+        let row = document.createElement('tr');
+
+        let nameCell = row.insertCell();
+        let heightCell = row.insertCell();
+        let weightCell = row.insertCell();
+        let genderCell = row.insertCell();
+        let birthYearCell = row.insertCell();
+        let appearancesCell = row.insertCell();
+
+        nameCell.innerHTML = data.name;
+        heightCell.innerHTML = `${data.height} cm`;
+        weightCell.innerHTML = `${data.mass} kg`;
+        genderCell.innerHTML = data.gender;
+        birthYearCell.innerHTML = data.birth_year;
+        appearancesCell.innerHTML = `${data.films.length} movies`;
+
+
+        bodyContainer.appendChild(row);
+    
+}
+
+let renderHeader = (array, colNumber) => {
     
     for (let i = 0; i < array.length; i++) {
         let column = document.createElement('th');
         column.innerHTML = array[i];
+        column.setAttribute('onclick', `${colNumber[i]}()`)
         headContainer.appendChild(column);
     }
 
@@ -95,7 +176,8 @@ let renderHeader = (array) => {
 let renderPeople = (resultFromApi) => {
     headContainer.innerHTML= '';
     bodyContainer.innerHTML='';
-    renderHeader(columnPeopleInfo);
+    searchContainer.style.visibility = 'visible';
+    renderHeader(columnPeopleInfo, columnNumber);
     renderPeopleData(resultFromApi);
 }
 
@@ -104,8 +186,27 @@ let renderPeople = (resultFromApi) => {
 let renderShip = (resultFromApi) => {
     headContainer.innerHTML= '';
     bodyContainer.innerHTML='';
-    renderHeader(columnShipInfo);
+    searchContainer.style.visibility = 'hidden';
+    renderHeader(columnShipInfo, columnNumber);
     renderShipData(resultFromApi);
+}
+
+let renderPlanet = (resultFromApi) => {
+    headContainer.innerHTML= '';
+    bodyContainer.innerHTML='';
+    searchContainer.style.visibility = 'hidden';
+    renderHeader(columnPlanetInfo, columnNumber);
+    renderPlanetData(resultFromApi);
+}
+
+let renderPerson = (result) => {
+    headContainer.innerHTML= '';
+    bodyContainer.innerHTML='';
+    previousButton.innerHTML = '';
+    nextButton.innerHTML = '';
+    searchContainer.style.visibility = 'visible';
+    renderHeader(columnPeopleInfo, columnNumber);
+    renderPersonData(result);
 }
 
 let sumCapacity = (num1,num2) => {
@@ -135,21 +236,22 @@ let renderButtons = (result) => {
     }
 }
 
-let functionPicker = (shipSelected, peopleSelected) => {
+let functionPicker = (shipSelected, peopleSelected, planetSelected) => {
     if(fetchResult[clicked].count == 82){
         return peopleSelected;
     }
-    if(fetchResult[clicked].count === 36){
+    else if(fetchResult[clicked].count === 36){
         return shipSelected;
+    }
+    else if(fetchResult[clicked].count === 60 ){
+        return planetSelected;
     }
 }
 
 
-
-
 peopleClick.addEventListener('click', () => {
     previousButton.innerHTML = '';
-        nextButton.innerHTML = '';
+    nextButton.innerHTML = '';
     console.log('People Clicked');
     getDataFromApi('https://swapi.dev/api/people/?page=1', renderPeople);
     clicked++;
@@ -158,9 +260,17 @@ peopleClick.addEventListener('click', () => {
 
 shipClick.addEventListener('click', () => {
     previousButton.innerHTML = '';
-        nextButton.innerHTML = '';
+    nextButton.innerHTML = '';
     console.log('Ship clicked');
     getDataFromApi('https://swapi.dev/api/starships/?page=1',renderShip);
+    clicked++;
+});
+
+planetClick.addEventListener('click', ()=>{
+    previousButton.innerHTML = '';
+    nextButton.innerHTML = '';
+    console.log('Planet clicked');
+    getDataFromApi('https://swapi.dev/api/planets/?page=1',renderPlanet);
     clicked++;
 });
 
@@ -170,7 +280,7 @@ nextButton.addEventListener('click', ()=>{
     console.log('Next button clicked');
     console.log(fetchResult[clicked]);
     let nextButtonInfo = fetchResult[clicked].next;
-    getDataFromApi(nextButtonInfo, functionPicker(renderShip,renderPeople));
+    getDataFromApi(nextButtonInfo, functionPicker(renderShip,renderPeople, renderPlanet));
     clicked++;
 
 })
@@ -183,6 +293,35 @@ previousButton.addEventListener('click', ()=>{
     console.log('Previous button clicked');
 
     let previousButtonInfo = fetchResult[clicked].previous;
-    getDataFromApi(previousButtonInfo, functionPicker(renderShip,renderPeople));
+    getDataFromApi(previousButtonInfo, functionPicker(renderShip,renderPeople,renderPlanet));
     clicked++;
 })
+
+searchPeople.addEventListener('click', () => searchPeople.value = '');
+
+searchButton.addEventListener('click', ()=>{
+    if(searchPeople.value === '') {
+        searchPeople.value = 'Please enter name';
+    }
+    else if(searchPeople.value === 'Please enter name'){
+        searchPeople.value = 'Please enter name';
+    }
+    else{
+    let parsedSearchPeople = searchPeople.value;
+    console.log(parsedSearchPeople);
+    
+
+    let searchResult = dataContainer.find(data => data.name === parsedSearchPeople);
+
+    if (searchResult){
+        renderPerson(searchResult)
+    }
+   searchPeople.value = ''
+}
+});
+
+
+function firstCol () {
+ console.log('first column clicked');
+ 
+}
