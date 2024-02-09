@@ -4,10 +4,64 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="source/style.css" type="text/css">
 </head>
 <body>
-    
+    <nav>
+        <button id="beerBarBtn" class="btn borderlessButton">Beer Bar</button>
+        <button id="beersBtn" class="btn borderlessButton">Beers</button>
+        <button id="randomBeerBtn" class="btn borderlessButton">Random Beer</button>
+        <div class="search">
+        <input type="search" name="searchBeer" id="searchBeerInput" class="form-control" >
+        <button id="searchBtn" class="btn btn-primary text-nowrap">Search</button>
+        </div>
+    </nav>
+<br>
+<br>
+<div class="form-floating">
+    <select class="form-select" id="floatingSelectPageSize" aria-label="Floating label select example">
+      <option selected>Show</option>
+      <option value="10">10</option>
+      <option value="25">25</option>
+      <option value="50">50</option>
+      <option value="80">80</option>
+    </select>
+
+    <select class="form-select" id="floatingSelectSort" aria-label="Floating label select example">
+        <option selected disabled>Sort By</option>
+        <option value="name">10</option>
+        <option value="25">25</option>
+        <option value="50">50</option>
+        <option value="80">80</option>
+      </select>
+  </div>
+   
+<br>
+<br>
+    <div id="landingPageDiv">
+        <h1>Hello to beer world!</h1>
+        <p>On this page you can find all the information about every beer</p>
+<hr>
+        <img src="source/images/beerkegs.jfif" alt="Beer keg" width="800px" height="500px">
+    </div>
+
+    <div id="resultPage">
+        <section class="parent basis">
+                <div id='firstItem' class="item">1</div>
+                <div id='secondItem'  class="item">2</div>
+                <div id='thirdItem'  class="item">3</div>
+                <div class="item">4</div>
+                <div class="item">5</div>
+
+            </section>
+    </div>
+<br>
+<br>
+    <div id="buttonContainer">
+    <button id="prevBtn" class="btn btn-primary" >Previous</button>
+    <button id="nextBtn" class="btn btn-primary" >Next</button>
+    </div>
 
 
 
@@ -19,8 +73,7 @@
 
 
 
-
-
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <script src="source/script.js"></script>
 </body>
 </html>

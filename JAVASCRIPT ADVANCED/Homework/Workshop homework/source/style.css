@@ -1,0 +1,57 @@
+nav{
+    padding: 20px;
+    background-color: rgb(229, 229, 236);
+    margin: auto;
+}
+.search {
+    display: inline-flex;
+    float: right;
+}
+.borderlessButton {
+    border: 0;
+    border-radius: 20pxs;
+    background-color: rgb(229, 229, 236);
+}
+#landingPageDiv{
+    background-color: rgb(196, 196, 231);
+    padding: 20px;
+    text-align: center;
+}
+
+#buttonContainer {
+    text-align: center;
+    visibility: hidden;
+}
+.form-floating{
+    display: inline-flex;
+}
+
+#floatingSelectPageSize{
+    float: left;
+    padding-left: 20px;
+    margin-left: 35vw;
+}
+#floatingSelectSort{
+    float: right;
+    padding: auto;
+    margin-left: 20vw;
+    width: 100px;
+}
+#resultPage{
+    visibility: hidden;
+}
+
+.basis {
+    display: inline-flex;
+}
+.item {
+    background-color: deepskyblue;
+    color: white;
+    font-weight: bold;
+    padding: 15px 0;
+    margin: 5px;
+
+}
+ {
+    order: 1;
+}
