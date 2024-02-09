@@ -35,8 +35,7 @@ let getDataFromApi = (url, renderFunction) => {
         renderFunction(result.results);
         renderButtons(result);
         fetchResult.push(result);
-        
-        
+
         
     })
     
@@ -130,10 +129,11 @@ let renderPlanetData = (data) => {
     for (let i = 0; i < 9; i++) {
         let data = await fetch(`https://swapi.dev/api/people/?page=${i+1}`);
         let response = await data.json();
-        result.push(response.results);
+        result.push(...response.results)
+        
     }
-    let parsedResult =[].concat.apply([], result);
-    dataContainer = parsedResult;
+    // let parsedResult = result.flat();
+    dataContainer = result;
     
 })()
 
@@ -168,6 +168,7 @@ let renderHeader = (array, colNumber) => {
         let column = document.createElement('th');
         column.innerHTML = array[i];
         column.setAttribute('onclick', `${colNumber[i]}()`)
+        column.setAttribute('id', colNumber[i])
         headContainer.appendChild(column);
     }
 
@@ -322,6 +323,10 @@ searchButton.addEventListener('click', ()=>{
 
 
 function firstCol () {
- console.log('first column clicked');
+    console.log('first column clicked');
+    let data = document.getElementById('firstCol').innerHTML
+    console.log(data);
  
 }
+
+
