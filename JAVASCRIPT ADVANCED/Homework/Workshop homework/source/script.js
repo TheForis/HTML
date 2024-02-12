@@ -36,7 +36,6 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
         paginationEndResult = paginationResult;
         renderFunction(result, paginationResult);
         realTimeResultContainer = result;
-        console.log(realTimeResultContainer);
         
 
     })
