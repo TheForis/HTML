@@ -37,7 +37,7 @@ nav{
     float: right;
     position: relative;
     padding: auto ;
-    margin-left: 24vw;
+    margin-left: 12vw;
     width: 110px;
 }
 #resultPage{
@@ -46,6 +46,7 @@ nav{
 
 .card {
     display: inline-grid;
+    position: relative;
     padding: 15px;
 }
 .card-text {
@@ -68,4 +69,7 @@ nav{
 #paginationTag{
     display: inline-flex;
     position: absolute;
+}
+#spinLoading {
+    margin-left: 12vw;
 }

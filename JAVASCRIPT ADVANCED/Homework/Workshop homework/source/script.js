@@ -11,7 +11,7 @@ const formSelectors = document.getElementsByClassName('form-floating')[0];
 const searchBtn = document.getElementById('searchBtn');
 const searchInput = document.getElementById('searchBeerInput');
 const paginationHtmlPrint = document.getElementById('paginationTag');
-
+const loader = document.getElementById('spinLoading');
 
 
 let allBeers = [];
@@ -31,6 +31,7 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
     .then(response=> response.json())
     .then(result =>{
         // console.log(result);
+        loader.style.visibility ='hidden';
         let endPageNumber = parseInt(endPage(result.length));
         let paginationResult = pagination(page,endPageNumber);
         paginationEndResult = paginationResult;
@@ -54,6 +55,7 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
 async function getRandomBeer(renderFunction){
     let response = await fetch('https://api.punkapi.com/v2/beers/random');
     let result = await response.json();
+    loader.style.visibility ='hidden';
     renderFunction(result[0]);
 }
 
@@ -70,6 +72,7 @@ function documentRender (result, pagination){
       </div>` 
         
     }
+    
     paginationHtmlPrint.innerText = pagination;
 
     
@@ -156,6 +159,8 @@ function pagination (pageNumber,endPage){
 }
 
 function sorter(sortBy,data) {
+
+    loader.style.visibility ='hidden';
     if(dataIsAscending === false){
         if (sortBy === 'name') {
             console.log('name selected');
@@ -267,6 +272,7 @@ beersButton.addEventListener('click', ()=> {
     resultPage.innerHTML = '';
     resultPage.style.visibility = 'visible';
     sortSelect.value = 'default';
+    loader.style.visibility = 'visible';
     
     getDataFromApi(1,showNumberResults, documentRender);
     formSelectors.style.visibility ='visible';
@@ -279,6 +285,7 @@ showNumberOfResults.addEventListener('click', () =>{
     let showNumResults = showNumberOfResults.value;
     showNumberResults = showNumResults;
     numberOfPage = 1;
+    loader.style.visibility ='visible';
     getDataFromApi(1 ,showNumResults, documentRender);
     displayButtons(1);
 
@@ -288,6 +295,7 @@ nextButton.addEventListener('click', ()=>{
     resultPage.innerHTML = '';
     let nextPage = numberOfPage + 1;
     numberOfPage = nextPage;
+    loader.style.visibility ='visible';
     getDataFromApi(nextPage,showNumberResults,documentRender);
     displayButtons(endPage(parseInt(showNumberResults)));
 })
@@ -296,6 +304,7 @@ previousButton.addEventListener('click',()=>{
     resultPage.innerHTML = '';
     let previousPage = numberOfPage - 1;
     numberOfPage = previousPage;
+    loader.style.visibility ='visible';
     getDataFromApi(previousPage,showNumberResults,documentRender);
     displayButtons(endPage(parseInt(showNumberResults)));
 })
@@ -306,6 +315,7 @@ randomBeerButton.addEventListener('click', ()=>{
     resultPage.innerHTML = '';  
     formSelectors.style.visibility = 'hidden';
     sortSelect.value = 'default';
+    loader.style.visibility ='visible';
     displayButtons('hide');
     resultPage.style.visibility = 'visible';
     getRandomBeer(beerRender);
@@ -340,6 +350,7 @@ searchInput.onkeydown = (event) =>{
 
 sortSelect.addEventListener('click',()=>{
     resultPage.innerHTML = '';
+    loader.style.visibility ='visible';
     let sortBy = sortSelect.value;
     let sortedResult = sorter(sortBy,realTimeResultContainer);
     documentRender(sortedResult,paginationEndResult);
