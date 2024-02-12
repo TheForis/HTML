@@ -30,7 +30,7 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
     fetch(`https://api.punkapi.com/v2/beers?page=${page}&per_page=${numOfResults}`)
     .then(response=> response.json())
     .then(result =>{
-        console.log(result);
+        // console.log(result);
         let endPageNumber = parseInt(endPage(result.length));
         let paginationResult = pagination(page,endPageNumber);
         paginationEndResult = paginationResult;
@@ -54,7 +54,6 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
 async function getRandomBeer(renderFunction){
     let response = await fetch('https://api.punkapi.com/v2/beers/random');
     let result = await response.json();
-    console.log(result[0]);
     renderFunction(result[0]);
 }
 
@@ -171,14 +170,14 @@ function sorter(sortBy,data) {
                     return 0;
                 }
         }) 
-            console.log(sortedResult);
+
             dataIsAscending = true;
             return sortedResult;
         }
         else if(sortBy === 'abv'){
             console.log('abv selected');
             let sortedResult = data.toSorted((a,b)=> a.abv - b.abv);
-            console.log(sortedResult);
+
             dataIsAscending = true;
             return sortedResult;
         }
@@ -196,14 +195,14 @@ function sorter(sortBy,data) {
                     return 0;
                 }
             })
-            console.log(sortedResult);
+
             dataIsAscending = true;
             return sortedResult;
         }
         else if(sortBy === 'ibu'){
             console.log('ibu selected');
             let sortedResult = data.toSorted((a,b)=> a.ibu - b.ibu);
-            console.log(sortedResult);
+            
             dataIsAscending = true;
             return sortedResult;
     }}
@@ -222,14 +221,14 @@ function sorter(sortBy,data) {
                     return 0;
                 }
         }) 
-            console.log(sortedResult);
+            
             dataIsAscending = false;
             return sortedResult;
         }
         else if(sortBy === 'abv'){
             console.log('abv selected');
             let sortedResult = data.toSorted((a,b)=> b.abv - a.abv);
-            console.log(sortedResult);
+            
             dataIsAscending = false;
             return sortedResult;
         }
@@ -247,14 +246,14 @@ function sorter(sortBy,data) {
                     return 0;
                 }
             })
-            console.log(sortedResult);
+            
             dataIsAscending = false;
             return sortedResult;
         }
         else if(sortBy === 'ibu'){
             console.log('ibu selected');
             let sortedResult = data.toSorted((a,b)=> b.ibu - a.ibu);
-            console.log(sortedResult);
+            
             dataIsAscending = false;
             return sortedResult;
         }}    
