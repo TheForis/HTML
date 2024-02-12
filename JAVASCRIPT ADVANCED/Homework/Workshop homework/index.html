@@ -20,20 +20,21 @@
 <br>
 <br>
 <div class="form-floating">
-    <select class="form-select" id="floatingSelectPageSize" aria-label="Floating label select example">
-      <option selected>Show</option>
+    <p id="paginationTag"></p>
+    <select class="form-select" id="floatingSelectPageSize" aria-label="Floating label select">
+      <option selected disabled>Show</option>
       <option value="10">10</option>
       <option value="25">25</option>
-      <option value="50">50</option>
+      <option value="40">40</option>
       <option value="80">80</option>
     </select>
 
-    <select class="form-select" id="floatingSelectSort" aria-label="Floating label select example">
-        <option selected disabled>Sort By</option>
-        <option value="name">10</option>
-        <option value="25">25</option>
-        <option value="50">50</option>
-        <option value="80">80</option>
+    <select class="form-select" id="floatingSelectSort" aria-label="Floating label select">
+        <option selected disabled value="default">Sort By</option>
+        <option value="name">Name</option>
+        <option value="abv">% alc abv --- abv prop</option>
+        <option value="first_brewed">First brewed</option>
+        <option value="ibu">bitterness --- ibu prop</option>
       </select>
   </div>
    
@@ -45,17 +46,12 @@
 <hr>
         <img src="source/images/beerkegs.jfif" alt="Beer keg" width="800px" height="500px">
     </div>
-
+    
     <div id="resultPage">
-        <section class="parent basis">
-                <div id='firstItem' class="item">1</div>
-                <div id='secondItem'  class="item">2</div>
-                <div id='thirdItem'  class="item">3</div>
-                <div class="item">4</div>
-                <div class="item">5</div>
-
-            </section>
+        
     </div>
+<br>
+<br>
 <br>
 <br>
     <div id="buttonContainer">

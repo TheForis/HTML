@@ -24,34 +24,48 @@ nav{
 }
 .form-floating{
     display: inline-flex;
+    visibility: hidden;
 }
 
 #floatingSelectPageSize{
     float: left;
-    padding-left: 20px;
-    margin-left: 35vw;
+    position: relative;
+    padding-left: auto;
+    margin-left: 28vw;
 }
 #floatingSelectSort{
     float: right;
-    padding: auto;
-    margin-left: 20vw;
-    width: 100px;
+    position: relative;
+    padding: auto ;
+    margin-left: 24vw;
+    width: 110px;
 }
 #resultPage{
     visibility: hidden;
 }
 
-.basis {
+.card {
+    display: inline-grid;
+    padding: 15px;
+}
+.card-text {
+    text-size-adjust: 10px;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    white-space: normal;
+    height: 90px;
+}
+#singleBeerImage {
+    max-height: 500px;
+    padding-left: 5vw;
+}
+.singleCard-body{
+    border-style: double;
+    border: 1px solid rgba(175, 174, 174, 0.658);
+    margin-left: 4rem;
+    padding: 15px;
+}
+#paginationTag{
     display: inline-flex;
-}
-.item {
-    background-color: deepskyblue;
-    color: white;
-    font-weight: bold;
-    padding: 15px 0;
-    margin: 5px;
-
-}
- {
-    order: 1;
+    position: absolute;
 }
