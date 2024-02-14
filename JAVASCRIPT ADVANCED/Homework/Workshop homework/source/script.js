@@ -62,7 +62,6 @@ async function getRandomBeer(renderFunction){
 async function getBeerByName(beerName,renderFunction){
     let response = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${beerName}`);
     let result = await response.json();
-    console.log(result[0]);
     renderFunction(result[0]);
 }
 
@@ -157,7 +156,7 @@ function endPage (number){
 }
 
 function moreDetails (result){
-    let data = allBeers.find(data => data.id === result);
+    let data = realTimeResultContainer.find(data => data.id === result);
     beerRender(data);
 }
 
@@ -184,7 +183,7 @@ function sortAscending(sortBy,data){
         // needs work
         let sortedData = dateParser(data);
         let sortedResult = sortedData.toSorted((a,b)=> (a.first_brewed).localeCompare(b.first_brewed))
-        console.table(sortedResult);
+        // console.table(sortedResult);
         dataIsAscending = true;
         return sortedResult;
     }
@@ -217,7 +216,7 @@ function sortDescending(sortBy,data) {
         
         let sortedData = dateParser(data);
         let sortedResult = sortedData.toSorted((a,b)=> (b.first_brewed).localeCompare(a.first_brewed))
-        console.table(sortedResult);
+        // console.table(sortedResult);
         dataIsAscending = false;
         return sortedResult;
     }
@@ -247,7 +246,6 @@ function dateParser (data){
         object.first_brewed = object.first_brewed.split('/').reverse().join("/");
         result.push(object);
     }
-    console.log(result);
     dateParserRuns++
     return result;
     }
