@@ -140,19 +140,21 @@ function displayButtons (endPageNumber){
 }
 
 function endPage (number){
-    switch (number) {
-        case 10:
-            return 33;
-        case 25:
-            return 13;
-        case 40:
-            return 9;
-        case 80:
-            return 5;
+    const numberOfBeers = 325;
+    return Math.ceil(numberOfBeers / number)
+    // switch (number) {
+    //     case 10:
+    //         return 33;
+    //     case 25:
+    //         return 13;
+    //     case 40:
+    //         return 9;
+    //     case 80:
+    //         return 5;
             
-        default:
-            return numberOfPage;
-    }
+    //     default:
+    //         return numberOfPage;
+    // }
 }
 
 function moreDetails (result){
