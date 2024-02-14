@@ -14,7 +14,7 @@ const paginationHtmlPrint = document.getElementById('paginationTag');
 const loader = document.getElementById('spinLoading');
 
 
-let allBeers = [];
+// let allBeers = [];
 
 let numberOfPage = 1;
 let showNumberResults = 10;
@@ -22,6 +22,7 @@ let moreDetailsId = 0;
 let endPageResult = endPage(showNumberResults);
 let paginationEndResult = 0;
 let realTimeResultContainer = [];
+let dateParserRuns = 0;
 
 let dataIsAscending = false;
 
@@ -43,19 +44,25 @@ const getDataFromApi = (page, numOfResults = 10, renderFunction) => {
     .catch(error => console.log(error));
 }
 
-(async function () {
-    for (let i = 0; i < 5; i++) {
-        const response = await fetch(`https://api.punkapi.com/v2/beers?page=${[i+1]}&per_page=80`);
-        const result = await response.json();
-        allBeers.push(...result)
-    }
+// (async function () {
+//     for (let i = 0; i < 5; i++) {
+//         const response = await fetch(`https://api.punkapi.com/v2/beers?page=${[i+1]}&per_page=80`);
+//         const result = await response.json();
+//         allBeers.push(...result)
+//     }
 
-})()
+// })()
 
 async function getRandomBeer(renderFunction){
     let response = await fetch('https://api.punkapi.com/v2/beers/random');
     let result = await response.json();
     loader.style.visibility ='hidden';
+    renderFunction(result[0]);
+}
+async function getBeerByName(beerName,renderFunction){
+    let response = await fetch(`https://api.punkapi.com/v2/beers?beer_name=${beerName}`);
+    let result = await response.json();
+    console.log(result[0]);
     renderFunction(result[0]);
 }
 
@@ -157,112 +164,96 @@ function moreDetails (result){
 function pagination (pageNumber,endPage){
     return `Page ${pageNumber} / ${endPage}`;
 }
+function sortAscending(sortBy,data){
+    if (sortBy === 'name') {
+        console.log('name selected');
+        let sortedResult = data.toSorted((a,b)=> (a.name).localeCompare(b.name)); 
 
+        dataIsAscending = true;
+        return sortedResult;
+    }
+    else if(sortBy === 'abv'){
+        console.log('abv selected');
+        let sortedResult = data.toSorted((a,b)=> a.abv - b.abv);
+
+        dataIsAscending = true;
+        return sortedResult;
+    }
+    else if(sortBy === 'first_brewed'){
+        console.log('first brewed selected');
+        // needs work
+        let sortedData = dateParser(data);
+        let sortedResult = sortedData.toSorted((a,b)=> (a.first_brewed).localeCompare(b.first_brewed))
+        console.table(sortedResult);
+        dataIsAscending = true;
+        return sortedResult;
+    }
+    else if(sortBy === 'ibu'){
+        console.log('ibu selected');
+        let sortedResult = data.toSorted((a,b)=> a.ibu - b.ibu);
+        
+        dataIsAscending = true;
+        return sortedResult;
+}
+}
+
+function sortDescending(sortBy,data) {
+    if (sortBy === 'name') {
+        console.log('name selected descending');
+        let sortedResult = data.toSorted((a,b)=>(b.name).localeCompare(a.name)); 
+        
+        dataIsAscending = false;
+        return sortedResult;
+    }
+    else if(sortBy === 'abv'){
+        console.log('abv selected descencing');
+        let sortedResult = data.toSorted((a,b)=> b.abv - a.abv);
+        
+        dataIsAscending = false;
+        return sortedResult;
+    }
+    else if(sortBy === 'first_brewed'){
+        console.log('first brewed descending selected');
+        
+        let sortedData = dateParser(data);
+        let sortedResult = sortedData.toSorted((a,b)=> (b.first_brewed).localeCompare(a.first_brewed))
+        console.table(sortedResult);
+        dataIsAscending = false;
+        return sortedResult;
+    }
+    else if(sortBy === 'ibu'){
+        console.log('ibu selected descending');
+        let sortedResult = data.toSorted((a,b)=> b.ibu - a.ibu);
+        
+        dataIsAscending = false;
+        return sortedResult;
+    }
+}
 function sorter(sortBy,data) {
-
     loader.style.visibility ='hidden';
-    if(dataIsAscending === false){
-        if (sortBy === 'name') {
-            console.log('name selected');
-            let sortedResult = data.toSorted((a,b)=>{
-                if(a.name < b.name){
-                    return -1;
-                }
-                if(a.name > b.name){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-        }) 
 
-            dataIsAscending = true;
-            return sortedResult;
-        }
-        else if(sortBy === 'abv'){
-            console.log('abv selected');
-            let sortedResult = data.toSorted((a,b)=> a.abv - b.abv);
-
-            dataIsAscending = true;
-            return sortedResult;
-        }
-        else if(sortBy === 'first_brewed'){
-            console.log('first brewed selected');
-            // needs work
-            let sortedResult = data.toSorted((a,b)=>{
-                if(a.first_brewed < b.first_brewed){
-                    return -1;
-                }
-                if(a.first_brewed > b.first_brewed){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            })
-
-            dataIsAscending = true;
-            return sortedResult;
-        }
-        else if(sortBy === 'ibu'){
-            console.log('ibu selected');
-            let sortedResult = data.toSorted((a,b)=> a.ibu - b.ibu);
-            
-            dataIsAscending = true;
-            return sortedResult;
-    }}
-
-    else{
-        if (sortBy === 'name') {
-            console.log('name selected descending');
-            let sortedResult = data.toSorted((a,b)=>{
-                if(a.name > b.name){
-                    return -1;
-                }
-                if(a.name < b.name){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-        }) 
-            
-            dataIsAscending = false;
-            return sortedResult;
-        }
-        else if(sortBy === 'abv'){
-            console.log('abv selected');
-            let sortedResult = data.toSorted((a,b)=> b.abv - a.abv);
-            
-            dataIsAscending = false;
-            return sortedResult;
-        }
-        else if(sortBy === 'first_brewed'){
-            console.log('first brewed selected');
-            // needs work
-            let sortedResult = data.toSorted((a,b)=>{
-                if(a.first_brewed > b.first_brewed){
-                    return -1;
-                }
-                if(a.first_brewed < b.first_brewed){
-                    return 1;
-                }
-                else{
-                    return 0;
-                }
-            })
-            
-            dataIsAscending = false;
-            return sortedResult;
-        }
-        else if(sortBy === 'ibu'){
-            console.log('ibu selected');
-            let sortedResult = data.toSorted((a,b)=> b.ibu - a.ibu);
-            
-            dataIsAscending = false;
-            return sortedResult;
-        }}    
+    if(dataIsAscending){
+        return sortDescending(sortBy,data);
+    }
+    return sortAscending(sortBy,data);   
     
+    
+}
+
+function dateParser (data){
+    if (dateParserRuns === 0){
+    let result = [];
+    for (const object of data) {
+        object.first_brewed = object.first_brewed.split('/').reverse().join("/");
+        result.push(object);
+    }
+    console.log(result);
+    dateParserRuns++
+    return result;
+    }
+    else {
+        return data
+    }
     
 }
 
@@ -273,18 +264,22 @@ beersButton.addEventListener('click', ()=> {
     resultPage.style.visibility = 'visible';
     sortSelect.value = 'default';
     loader.style.visibility = 'visible';
+    dateParserRuns = 0;
+    dataIsAscending = false;
     
     getDataFromApi(1,showNumberResults, documentRender);
     formSelectors.style.visibility ='visible';
     displayButtons(1);
 })
 
-showNumberOfResults.addEventListener('click', () =>{
+showNumberOfResults.addEventListener('input', () =>{
     resultPage.innerHTML = '';
     sortSelect.value = 'default';
     let showNumResults = showNumberOfResults.value;
     showNumberResults = showNumResults;
     numberOfPage = 1;
+    dateParserRuns = 0;
+    dataIsAscending = false;
     loader.style.visibility ='visible';
     getDataFromApi(1 ,showNumResults, documentRender);
     displayButtons(1);
@@ -296,6 +291,8 @@ nextButton.addEventListener('click', ()=>{
     let nextPage = numberOfPage + 1;
     numberOfPage = nextPage;
     loader.style.visibility ='visible';
+    dateParserRuns = 0;
+    dataIsAscending = false;
     getDataFromApi(nextPage,showNumberResults,documentRender);
     displayButtons(endPage(parseInt(showNumberResults)));
 })
@@ -305,6 +302,8 @@ previousButton.addEventListener('click',()=>{
     let previousPage = numberOfPage - 1;
     numberOfPage = previousPage;
     loader.style.visibility ='visible';
+    dateParserRuns = 0;
+    dataIsAscending = false;
     getDataFromApi(previousPage,showNumberResults,documentRender);
     displayButtons(endPage(parseInt(showNumberResults)));
 })
@@ -316,6 +315,8 @@ randomBeerButton.addEventListener('click', ()=>{
     formSelectors.style.visibility = 'hidden';
     sortSelect.value = 'default';
     loader.style.visibility ='visible';
+    dateParserRuns = 0;
+    dataIsAscending = false;
     displayButtons('hide');
     resultPage.style.visibility = 'visible';
     getRandomBeer(beerRender);
@@ -324,35 +325,40 @@ randomBeerButton.addEventListener('click', ()=>{
 beerBarButton.addEventListener('click',()=>{
     resultPage.style.display = 'none';
     displayButtons('hide');
+    dateParserRuns = 0;
+    dataIsAscending = false;
     formSelectors.style.visibility = 'hidden';
     landingPage.style.display = 'block';
     sortSelect.value = 'default';
 })
 
 searchBtn.addEventListener('click', ()=>{
-    let searchItem = searchInput.value.toLowerCase();
+    let searchItem = searchInput.value.toLowerCase().split(' ').join('_');
     searchInput.value = '';
     console.log(searchItem);
-    console.log(allBeers);
-    let searchResult = allBeers.find(data => data.name.toLowerCase() === searchItem);
-    beerRender(searchResult);
+    getBeerByName(searchItem, beerRender);
+    dataIsAscending = false;
+    dateParserRuns = 0;
 })
 searchInput.onkeydown = (event) =>{
     if (event.key === 'Enter') {
-        let searchItem = searchInput.value.toLowerCase();
-        searchInput.value = '';
-         console.log(searchItem);
-         console.log(allBeers);
-        let searchResult = allBeers.find(data => data.name.toLowerCase() === searchItem);
-        beerRender(searchResult);
+        let searchItem = searchInput.value.toLowerCase().split(' ').join('_');
+    searchInput.value = '';
+    console.log(searchItem);
+    getBeerByName(searchItem, beerRender);
+    dataIsAscending = false;
+    dateParserRuns = 0;
     }
 }
 
-sortSelect.addEventListener('click',()=>{
+sortSelect.addEventListener('input',()=>{
     resultPage.innerHTML = '';
     loader.style.visibility ='visible';
     let sortBy = sortSelect.value;
     let sortedResult = sorter(sortBy,realTimeResultContainer);
     documentRender(sortedResult,paginationEndResult);
+    sortSelect.value = 'default';
+    
+    
 
 })
